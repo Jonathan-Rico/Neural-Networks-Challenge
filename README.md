@@ -75,3 +75,5 @@ The second model shows us that an applicant has a 79% chance of being successful
 --Contained the classifications C1000,C1200,C2000,C2100,C3000
 
 --Their name appeared more than 4 times in the dataset (applied more than 4 times)
+
+A recommendation I would make to help solve this classification problem is to use a Random Forest model, which would help us calculate the importance of each feature in our dataset, and make better adjustments on our deep learning model based on our results from the Random Forest model.
