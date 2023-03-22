@@ -48,6 +48,7 @@ Results
 In our first model, we chose the variable IS_SUCCESSFUL as the target variable. The EIN and NAME column were dropped, application types which had counts above 600 and
 classifications which had counts above 800 were dropped from the dataframe (to remove outliers) and reclassified as `other`. The categorical data is then converted to numeric values (binary) in order to run it through the model.
 We run the first sequential model using 2 hidden layers (1st layer = 100 neurons, 2nd layer = 50 neurons) using a rectified linear unit function, while the output layer (1 neuron) used a sigmoid function.
+
 ![image](https://user-images.githubusercontent.com/6768169/226886322-d0d88e56-c3d7-43e8-ba0c-f08676629386.png)
 
 Our first model's results were:
@@ -60,6 +61,7 @@ Optimization:
 To optimize the model , I chose to drop only the EIN column form the dataframe, and chose to explore data with whose NAME counts were below 5, as well as classification counts that were lower than 800, and reclassify the rest of the data as `other` (chose to leave in all application types). By looking at more categories of the data, while still filtering out outliers in the dataset while looking at more features, we can hope to get a better representation of our dataset when we run our data through the model.
 This model ran using 4 hidden layers, with the first one (100 neurons) starting as a rectified linear unit function and the other three layers (30 neurons, 10 neurons and 5 neurons) using a sigmoid function. The output layer (1 neuron) also used a sigmoid function. By using more layers (with decreasing neuron counts per layer), I hoped to increase the accuracy of the model.
 to the desired accuracy level (>75%)
+
 ![image](https://user-images.githubusercontent.com/6768169/226889167-77b45903-9427-4d75-81c0-55a03fa9317b.png)
 
 The results for this model were:
