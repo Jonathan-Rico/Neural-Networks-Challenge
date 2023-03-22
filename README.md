@@ -43,5 +43,32 @@ In addition, we attempt to make this model more accurate (at least 75% accurate)
 
 -Use different activation functions for the hidden layers.
 
--Add or reduce the number of epochs to the training regimen.
+Results
 
+In our first model, we chose the variable IS_SUCCESSFUL as the target variable. The EIN and NAME column were dropped, application types which had counts above 600 and
+classifications which had counts above 800 were dropped from the dataframe (to remove outliers) and reclassified as `other`. The categorical data is then converted to numeric values (binary) in order to run it through the model.
+We run the first sequential model using 2 hidden layers (1st layer = 100 neurons, 2nd layer = 50 neurons) using a rectified linear unit function, while the output layer (1 neuron) used a sigmoid function.
+![image](https://user-images.githubusercontent.com/6768169/226886322-d0d88e56-c3d7-43e8-ba0c-f08676629386.png)
+
+Our first model's results were:
+
+268/268 - 0s - loss: 0.5624 - accuracy: 0.7287 - 251ms/epoch - 936us/step
+Loss: 0.562398374080658, Accuracy: 0.7287463545799255.
+
+Optimization:
+
+To optimize the model , I chose to drop only the EIN column form the dataframe, and chose to explore data with whose NAME counts were below 5, as well as classification counts that were lower than 800, and reclassify the rest of the data as `other` (chose to leave in all application types). By looking at more categories of the data, while still filtering out outliers in the dataset while looking at more features, we can hope to get a better representation of our dataset when we run our data through the model.
+This model ran using 4 hidden layers, with the first one (100 neurons) starting as a rectified linear unit function and the other three layers (30 neurons, 10 neurons and 5 neurons) using a sigmoid function. The output layer (1 neuron) also used a sigmoid function. By using more layers (with decreasing neuron counts per layer), I hoped to increase the accuracy of the model.
+to the desired accuracy level (>75%)
+![image](https://user-images.githubusercontent.com/6768169/226889167-77b45903-9427-4d75-81c0-55a03fa9317b.png)
+
+The results for this model were:
+268/268 - 0s - loss: 0.4585 - accuracy: 0.7914 - 241ms/epoch - 900us/step
+Loss: 0.4584789574146271, Accuracy: 0.7913702726364136
+
+This model was successful at reaching the desired accuracy of 75% or greater accuracy. From this result, we can assume that our first model's scope (looking at the features) omitted an important column for analysis, as well as lacked enough parameters (layers+neurons) to effectively make predictions on our dataset. 
+
+The second model shows us that an applicant has a 79% chance of being successful if they met both the following criteria:
+
+--Contained the classifications C1000,C1200,C2000,C2100,C3000
+--Their name appeared more than 4 times in the dataset (applied more than 4 times)
