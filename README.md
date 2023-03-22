@@ -73,4 +73,5 @@ This model was successful at reaching the desired accuracy of 75% or greater acc
 The second model shows us that an applicant has a 79% chance of being successful if they met both the following criteria:
 
 --Contained the classifications C1000,C1200,C2000,C2100,C3000
+
 --Their name appeared more than 4 times in the dataset (applied more than 4 times)
