@@ -19,10 +19,18 @@ IS_SUCCESSFUL—Was the money used effectively
 Using Pandas and scikit-learn’s StandardScaler(), we preprocess the dataset. Using TensorFlow, we design a neural network, or deep learning model, to create a binary classification model that can predict if an Alphabet Soup-funded organization will be successful based on the features in the dataset. Then we create a neural network model by assigning the number of input features and nodes for each layer using TensorFlow and Keras. As a final step for this model, we compile, train, and evaluate the binary classification model to calculate the model’s loss and accuracy using the test data and export our results into a HDF5 file.
 
 In addition, we attempt to make this model more accurate (at least 75% accurate) by adjusting the input data to ensure that no variables or outliers are causing confusion in the model, such as:
+
 -Dropping more or fewer columns.
+
 -Creating more bins for rare occurrences in columns.
+
 -Increasing or decreasing the number of values for each bin.
+
 -Add more neurons to a hidden layer.
+
 -Add more hidden layers.
+
 -Use different activation functions for the hidden layers.
+
 -Add or reduce the number of epochs to the training regimen.
+
